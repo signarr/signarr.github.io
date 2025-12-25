@@ -2,251 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio</title>
+
   <style>
-    /* === BASE === */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background: #111;
-      color: #eee;
+      background: #0f0f14;
+      color: #eaeaf0;
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-
-    /* === NAV === */
-    nav {
-      position: fixed;
-      top: 0; left: 0;
-      height: 100vh;
-      width: 90px;
-      background: #000;
-      border-right: 1px solid #222;
+    header {
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      padding-top: 50px;
-      gap: 40px;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
     }
 
-    nav a {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: 14px;
-      opacity: 0.6;
-      transition: 0.3s;
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
     }
 
-    nav a:hover {
-      opacity: 1;
+    header p {
+      margin-top: 1rem;
+      color: #b3b3c6;
+      font-size: 1.1rem;
     }
 
-    /* === PAGE WRAPPER === */
-    .page {
-      margin-left: 120px;
-      padding: 80px 60px;
-      max-width: 1000px;
+    section {
+      padding: 4rem 10%;
     }
 
-    /* === HERO === */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      min-height: 80vh;
-      gap: 50px;
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #6c63ff;
+      padding-left: 1rem;
     }
 
-    .hero h1 {
-      font-size: 52px;
-      font-weight: 800;
-      color: #fff;
-    }
-
-    .hero p {
-      max-width: 450px;
-      opacity: 0.7;
-      margin-top: 10px;
-    }
-
-    .hero-btn {
-      margin-top: 30px;
-      display: inline-block;
-      padding: 12px 28px;
-      border: 1px solid #fff;
-      border-radius: 4px;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .hero-btn:hover {
-      background: #fff;
-      color: #111;
-    }
-
-    .hero-img {
-      width: 100%;
-      height: 340px;
-      background: #222;
-      border: 1px solid #333;
-      border-radius: 10px;
-    }
-
-    /* === SECTION TITLES === */
-    .section-title {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 30px;
-      color: #fff;
-    }
-
-    /* === ABOUT === */
-    .about {
-      margin-top: 120px;
+    .about p {
       max-width: 700px;
-      opacity: 0.8;
+      color: #cfcfe6;
     }
 
-    /* === SKILLS === */
     .skills {
-      margin-top: 100px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
     }
 
     .skill-box {
-      background: #1a1a1a;
-      padding: 25px;
-      border: 1px solid #222;
-      border-radius: 6px;
+      background: #181822;
+      padding: 1rem;
+      border-radius: 10px;
       text-align: center;
-      opacity: 0.8;
       transition: 0.3s;
     }
 
     .skill-box:hover {
-      opacity: 1;
+      transform: translateY(-5px);
+      background: #20202e;
     }
 
-    /* === PROJECTS === */
     .projects {
-      margin-top: 120px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
     .project-card {
-      background: #1a1a1a;
-      border: 1px solid #222;
-      padding: 25px;
-      border-radius: 6px;
-    }
-
-    .project-img {
-      width: 100%;
-      height: 180px;
-      background: #333;
-      border-radius: 6px;
-      margin-bottom: 15px;
+      background: #181822;
+      padding: 1.5rem;
+      border-radius: 12px;
     }
 
     .project-card h3 {
-      margin-bottom: 10px;
-      color: #fff;
+      margin-bottom: 0.5rem;
     }
 
-    /* === CONTACT === */
-    .contact {
-      margin-top: 120px;
+    .project-card p {
+      color: #b9b9d6;
+      font-size: 0.95rem;
     }
 
-    .contact p {
-      opacity: 0.7;
-    }
-
-    .contact-btn {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 12px 28px;
-      border: 1px solid #fff;
-      border-radius: 4px;
-    }
-
-  </style>
-  <style>
-    html {
-      scroll-behavior: smooth;
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #8a8aa3;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 
 <body>
-  <nav>
-    <a href="#hero">HOME</a>
-    <a href="#about">ABOUT</a>
-    <a href="#skills">SKILLS</a>
-    <a href="#projects">PROJECTS</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
 
-  <div class="page">
-    <!-- HERO -->
-    <section id="hero" class="hero">
-      <div>
-        <h1>Your Name</h1>
-        <p>Modern monochrome-themed portfolio with clean lines, strong layout, and minimalistic energy.</p>
-        <a class="hero-btn" href="#projects">See Projects</a>
+  <header>
+    <div>
+      <h1>Your Name</h1>
+      <p>Creative • Vocalist • Developer</p>
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I am a creative individual who enjoys building projects, exploring music,
+      and creating meaningful experiences through digital and artistic work.
+    </p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-box">Vocal</div>
+      <div class="skill-box">Songwriting</div>
+      <div class="skill-box">HTML & CSS</div>
+      <div class="skill-box">Creative Direction</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>Short description of your project or work.</p>
       </div>
-      <div class="hero-img"></div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about">
-      <h2 class="section-title">About Me</h2>
-      <p>I create interactive, minimal, and highly optimized user experiences. Focused on balanced composition, crisp typography, and elegant structure.</p>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills">
-        <div class="skill-box">HTML & CSS</div>
-        <div class="skill-box">JavaScript</div>
-        <div class="skill-box">UI/UX</div>
-        <div class="skill-box">Design Systems</div>
-        <div class="skill-box">Responsive Layout</div>
-        <div class="skill-box">Brand Identity</div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Another project description goes here.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects">
-        <div class="project-card">
-          <div class="project-img"></div>
-          <h3>Project One</h3>
-          <p>A modern concept focusing on structure and elegance.</p>
-        </div>
-        <div class="project-card">
-          <div class="project-img"></div>
-          <h3>Project Two</h3>
-          <p>Monochrome layout with clean, minimal atmosphere.</p>
-        </div>
-      </div>
-    </section>
+  <footer>
+    © 2025 Your Name — All Rights Reserved
+  </footer>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-      <h2 class="section-title">Contact</h2>
-      <p>If you want to collaborate or need something designed — feel free to reach out.</p>
-      <a href="mailto:your@email.com" class="contact-btn">Email Me</a>
-    </section>
-
-  </div>
 </body>
 </html>
